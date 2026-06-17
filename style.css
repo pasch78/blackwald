@@ -1,0 +1,138 @@
+/* CSS Variables for the Premium Palette */
+:root {
+	--bg-alabaster: #FBFBFA;
+	--bg-gradient: linear-gradient(135deg, #FDFDFD 0%, #F5F4F0 100%);
+	--ink-forest: #1E2D24;
+	--accent-moss: #A19275;
+	--text-secondary: #5A6660;
+}
+
+/* Reset & Base Styles */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body, html {
+	height: 100%;
+	font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+	background: var(--bg-alabaster);
+	background-image: var(--bg-gradient);
+	color: var(--ink-forest);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+/* Entrance Animation */
+@keyframes fadeUp {
+	0% { 
+		opacity: 0; 
+		transform: translateY(20px); 
+	}
+	100% { 
+		opacity: 1; 
+		transform: translateY(0); 
+	}
+}
+
+.container {
+	text-align: center;
+	padding: 2rem;
+	max-width: 800px;
+	animation: fadeUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Organic Graphic Styling */
+.logo-graphic {
+	width: 140px;
+	height: auto;
+	margin: 0 auto 2.5rem auto;
+	display: block;
+}
+
+/* Typography */
+h1 {
+	font-weight: 600;
+	font-size: clamp(1.8rem, 4vw, 2.5rem);
+	letter-spacing: 0.45em;
+	margin-right: -0.45em; /* Compensates for trailing letter-spacing to perfectly center */
+	margin-bottom: 0.8rem;
+	color: var(--ink-forest);
+	text-transform: uppercase;
+}
+
+h2 {
+	font-weight: 400;
+	font-size: 0.85rem;
+	letter-spacing: 0.6em;
+	margin-right: -0.6em;
+	color: var(--accent-moss);
+	text-transform: uppercase;
+	margin-bottom: 3rem;
+}
+
+.divider {
+	width: 1px;
+	height: 40px;
+	background-color: var(--accent-moss);
+	margin: 0 auto 2rem auto;
+	opacity: 0.5;
+}
+
+p.narrative {
+	font-weight: 300;
+	font-size: 1.1rem;
+	line-height: 1.8;
+	color: var(--text-secondary);
+	margin-bottom: 3rem;
+	max-width: 600px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* Contact Link */
+.contact-btn {
+	display: inline-block;
+	font-size: 0.8rem;
+	font-weight: 400;
+	letter-spacing: 0.2em;
+	text-transform: uppercase;
+	color: var(--ink-forest);
+	text-decoration: none;
+	border-bottom: 1px solid var(--accent-moss);
+	padding-bottom: 0.3rem;
+	transition: all 0.3s ease;
+}
+
+.contact-btn:hover {
+	color: var(--accent-moss);
+	border-bottom-color: var(--ink-forest);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+	h1 { 
+		letter-spacing: 0.3em; 
+		margin-right: -0.3em; 
+	}
+	
+	h2 { 
+		letter-spacing: 0.4em; 
+		margin-right: -0.4em; 
+	}
+	
+	p.narrative { 
+		font-size: 1rem; 
+		padding: 0 1rem; 
+	}
+	
+	.logo-graphic { 
+		width: 110px; 
+	}
+}
